@@ -1,0 +1,681 @@
+{
+  "luis_schema_version": "1.2.0",
+  "name": "Joshua 2.0",
+  "desc": "Joshua awoken from the long slumber..",
+  "culture": "en-us",
+  "intents": [
+    {
+      "Name": "PlayAGame",
+      "Children": []
+    },
+    {
+      "Name": "BackgroundStory",
+      "Children": []
+    },
+    {
+      "Name": "ListGames",
+      "Children": []
+    },
+    {
+      "Name": "None",
+      "Children": []
+    },
+    {
+      "Name": "GreetPerson",
+      "Children": []
+    },
+    {
+      "Name": "SayHello",
+      "Children": []
+    },
+    {
+      "Name": "WinningMove",
+      "Children": []
+    }
+  ],
+  "entities": [
+    {
+      "Name": "UserName",
+      "Children": []
+    },
+    {
+      "Name": "Determined",
+      "Children": []
+    },
+    {
+      "Name": "Game",
+      "Children": []
+    }
+  ],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [
+    {
+      "name": "Games",
+      "mode": false,
+      "words": "falkens maze,black jack,gin rummy,hearts,bridge,checkers,chess,poker,fighter combat,guerilla engagement,desert warfare,air to ground actions,theaterwide tactical warfare,theaterwide biotoxic and chemical warfare,global thermonuclear war",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "hello. my name is peter.",
+      "intent": "GreetPerson",
+      "entities": [
+        {
+          "entity": "UserName",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "hello",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "i want to play a game",
+      "intent": "ListGames",
+      "entities": []
+    },
+    {
+      "text": "i want to play a game of chess",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "who are you?",
+      "intent": "BackgroundStory",
+      "entities": []
+    },
+    {
+      "text": "what's the winning move?",
+      "intent": "WinningMove",
+      "entities": []
+    },
+    {
+      "text": "hello, my name is mira.",
+      "intent": "GreetPerson",
+      "entities": [
+        {
+          "entity": "UserName",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "hi there, i'm professor falken.",
+      "intent": "GreetPerson",
+      "entities": [
+        {
+          "entity": "UserName",
+          "startPos": 6,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "yo! peter is the name",
+      "intent": "GreetPerson",
+      "entities": [
+        {
+          "entity": "UserName",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "i'm jack.",
+      "intent": "GreetPerson",
+      "entities": [
+        {
+          "entity": "UserName",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "hi there. i'm malin.",
+      "intent": "GreetPerson",
+      "entities": [
+        {
+          "entity": "UserName",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "whats up?",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "yo",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "zup?",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "greetings",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "hello there",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "hi. my name is mira.",
+      "intent": "GreetPerson",
+      "entities": [
+        {
+          "entity": "UserName",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "yo. i'm fredrik.",
+      "intent": "GreetPerson",
+      "entities": [
+        {
+          "entity": "UserName",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "my name is peter.",
+      "intent": "GreetPerson",
+      "entities": [
+        {
+          "entity": "UserName",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i'd like to play a game of poker",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 9,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "i want to play falkens maze",
+      "intent": "PlayAGame",
+      "entities": []
+    },
+    {
+      "text": "let's play global thermonuclear war.",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 4,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "i want to play poker.",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i'd like to play some chess",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "i wanna play global thermonuclear war",
+      "intent": "PlayAGame",
+      "entities": []
+    },
+    {
+      "text": "later. let's play global thermonuclear war.",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Determined",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "Game",
+          "startPos": 6,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "no. i want to play global thermonuclear war.",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Determined",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "Game",
+          "startPos": 6,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "seriously - i want to play chess.",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Determined",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "Game",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "damnit, i really want to play global thermonuclear war.",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Determined",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "Game",
+          "startPos": 7,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "no! i want to play global thermonuclear war!",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Determined",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "Game",
+          "startPos": 6,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "later. let's play chess.",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Determined",
+          "startPos": 0,
+          "endPos": 0
+        },
+        {
+          "entity": "Game",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "how do you win?",
+      "intent": "WinningMove",
+      "entities": []
+    },
+    {
+      "text": "what is the winning move?",
+      "intent": "WinningMove",
+      "entities": []
+    },
+    {
+      "text": "how can i win?",
+      "intent": "WinningMove",
+      "entities": []
+    },
+    {
+      "text": "i want to win. how can i do that?",
+      "intent": "WinningMove",
+      "entities": []
+    },
+    {
+      "text": "who wins?",
+      "intent": "WinningMove",
+      "entities": []
+    },
+    {
+      "text": "what do i have to do to win?",
+      "intent": "WinningMove",
+      "entities": []
+    },
+    {
+      "text": "is there a way to cheat so i can win?",
+      "intent": "WinningMove",
+      "entities": []
+    },
+    {
+      "text": "what's this?",
+      "intent": "BackgroundStory",
+      "entities": []
+    },
+    {
+      "text": "what is this?",
+      "intent": "BackgroundStory",
+      "entities": []
+    },
+    {
+      "text": "what's this all bout?",
+      "intent": "BackgroundStory",
+      "entities": []
+    },
+    {
+      "text": "tell me about yourself",
+      "intent": "BackgroundStory",
+      "entities": []
+    },
+    {
+      "text": "who am i talking to",
+      "intent": "BackgroundStory",
+      "entities": []
+    },
+    {
+      "text": "are you real?",
+      "intent": "BackgroundStory",
+      "entities": []
+    },
+    {
+      "text": "are you alive?",
+      "intent": "BackgroundStory",
+      "entities": []
+    },
+    {
+      "text": "who is joshua?",
+      "intent": "BackgroundStory",
+      "entities": []
+    },
+    {
+      "text": "hi there, i'm ellen.",
+      "intent": "GreetPerson",
+      "entities": [
+        {
+          "entity": "UserName",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "hey! my name is stefan.",
+      "intent": "GreetPerson",
+      "entities": [
+        {
+          "entity": "UserName",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "hey there",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "oi",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "zup",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "nice to meet you",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "hello, joshua",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "greetings, joshua",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "hey there joshua",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "hi joshua",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "yo joshua",
+      "intent": "SayHello",
+      "entities": []
+    },
+    {
+      "text": "joshua, let's play some poker",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "i wanna play some chess",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "i'd like to play a game of checkers",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 9,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "i'd love to play some backgammon",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "i'd really like to play global thermonuclear war.",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 7,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "falkens maze sounds like fun",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "what games you got?",
+      "intent": "ListGames",
+      "entities": []
+    },
+    {
+      "text": "got any good games?",
+      "intent": "ListGames",
+      "entities": []
+    },
+    {
+      "text": "got any games to play?",
+      "intent": "ListGames",
+      "entities": []
+    },
+    {
+      "text": "show me your games",
+      "intent": "ListGames",
+      "entities": []
+    },
+    {
+      "text": "what games do you have?",
+      "intent": "ListGames",
+      "entities": []
+    },
+    {
+      "text": "joshua, what games can we play?",
+      "intent": "ListGames",
+      "entities": []
+    },
+    {
+      "text": "what games can we play?",
+      "intent": "ListGames",
+      "entities": []
+    },
+    {
+      "text": "do you have any games?",
+      "intent": "ListGames",
+      "entities": []
+    },
+    {
+      "text": "i want to play global thermonuclear war.",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 4,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "i'd like to play global thermonuclear war.",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 6,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "play global thermonuclear war!",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 1,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "let's do global thermonuclear war!",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 4,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "awesome! hit me with global thermonuclear war!",
+      "intent": "PlayAGame",
+      "entities": [
+        {
+          "entity": "Game",
+          "startPos": 5,
+          "endPos": 7
+        }
+      ]
+    }
+  ]
+}
