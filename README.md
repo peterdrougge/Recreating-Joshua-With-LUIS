@@ -1,4 +1,4 @@
-# Recreating-Joshua-With-LUIS
+# Recreating Joshua With LUIS
 
 This is the code that backs the article at https://blogs.msdn.microsoft.com/drougge/2016/05/31/resurrecting-woprjoshua-using-luis/
 
