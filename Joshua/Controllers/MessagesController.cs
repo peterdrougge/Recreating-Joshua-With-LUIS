@@ -3,59 +3,39 @@ using System.Web.Http;
 using Microsoft.Bot.Connector;
 using Microsoft.Bot.Builder.Dialogs;
 using Joshua.Dialogs;
+using System.Net.Http;
+using System.Diagnostics;
 
 namespace Joshua
 {
-    [BotAuthentication]
+    //[BotAuthentication]
     public class MessagesController : ApiController
     {
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
         /// </summary>
-        public async Task<Message> Post([FromBody]Message message)
+        public async Task<HttpResponseMessage> Post([FromBody]Activity message)
         {
-            if (message.Type == "Message")
+            if (message != null)
             {
-                // return our reply to the user
-                return await Conversation.SendAsync(message, () => new WarGamesDialog());
-            }
-            else
-            {
-                return HandleSystemMessage(message);
-            }
-        }
-
-        private Message HandleSystemMessage(Message message)
-        {
-            if (message.Type == "Ping")
-            {
-                Message reply = message.CreateReplyMessage();
-                reply.Type = "Ping";
-                return reply;
-            }
-            else if (message.Type == "DeleteUserData")
-            {
-                // Implement user deletion here
-                // If we handle user deletion, return a real message
-            }
-            else if (message.Type == "BotAddedToConversation")
-            {
-            }
-            else if (message.Type == "BotRemovedFromConversation")
-            {
-            }
-            else if (message.Type == "UserAddedToConversation")
-            {
-            }
-            else if (message.Type == "UserRemovedFromConversation")
-            {
-            }
-            else if (message.Type == "EndOfConversation")
-            {
+                // one of these will have an interface and process it
+                switch (message.GetActivityType())
+                {
+                    case ActivityTypes.Message:
+                await Conversation.SendAsync(message, () => new WarGamesDialog());
+                        break;
+                    case ActivityTypes.ConversationUpdate:
+                    case ActivityTypes.ContactRelationUpdate:
+                    case ActivityTypes.Typing:
+                    case ActivityTypes.DeleteUserData:
+                    default:
+                        Trace.TraceError($"Unknown activity type ignored: {message.GetActivityType()}");
+                        break;
+                }
             }
 
-            return null;
+            return new HttpResponseMessage(System.Net.HttpStatusCode.Accepted);
         }
     }
 }
