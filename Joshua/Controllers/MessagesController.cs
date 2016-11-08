@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace Joshua
 {
-    //[BotAuthentication]
+    [BotAuthentication]
     public class MessagesController : ApiController
     {
         /// <summary>

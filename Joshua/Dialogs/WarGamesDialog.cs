@@ -136,10 +136,12 @@ namespace Joshua.Dialogs
         [LuisIntent("ListGames")]
         public async Task ListGames(IDialogContext context, LuisResult result)
         {
-            var gameNames = "falkens maze,black jack,gin rummy,hearts,bridge,checkers,chess,poker,fighter combat,guerilla engagement,desert warfare,air to ground actions,theaterwide tactical warfare,theaterwide biotoxic and chemical warfare,global thermonuclear war.";
-            var buttons = new List<CardAction>();
             var replyToConversation = context.MakeMessage();
             replyToConversation.Attachments = new List<Attachment>();
+
+            // cards can only have 6 buttons, so we're splitting them up..
+            var gameNames = "falkens maze,black jack,gin rummy,hearts,bridge,checkers";
+            var buttons = new List<CardAction>();
             foreach (var item in gameNames.Split(','))
             {
                 buttons.Add(new CardAction()
@@ -151,7 +153,7 @@ namespace Joshua.Dialogs
             }
             var card = new HeroCard()
             {
-                Title = "Select one of the following games to play:",
+                Title = "Select one of the following games to play (page 1 / 3):",
                 Images = new List<CardImage>()
                 {
                     new CardImage()
@@ -161,10 +163,61 @@ namespace Joshua.Dialogs
                 },
                 Buttons = buttons
             };
+            replyToConversation.Attachments.Add(card.ToAttachment());
+
+            gameNames = "chess,poker,fighter combat,guerilla engagement,desert warfare,air to ground actions";
+            buttons = new List<CardAction>();
+            foreach (var item in gameNames.Split(','))
+            {
+                buttons.Add(new CardAction()
+                {
+                    Value = $"let's play \"{item}\"",
+                    Type = "postBack",
+                    Title = $"choose {item}"
+                });
+            }
+            card = new HeroCard()
+            {
+                Title = "Select one of the following games to play (page 2 / 3):",
+                Images = new List<CardImage>()
+                {
+                    new CardImage()
+                    {
+                        Url = "https://vignette2.wikia.nocookie.net/villains/images/8/8b/WOPR.png/revision/latest?cb=20151121234004"
+                    }
+                },
+                Buttons = buttons
+            };
+            replyToConversation.Attachments.Add(card.ToAttachment());
+
+            gameNames = "theaterwide tactical warfare,theaterwide biotoxic and chemical warfare,global thermonuclear war.";
+            buttons = new List<CardAction>();
+            foreach (var item in gameNames.Split(','))
+            {
+                buttons.Add(new CardAction()
+                {
+                    Value = $"how about we play \"{item}\"",
+                    Type = "imBack",
+                    Title = $"choose {item}"
+                });
+            }
+            card = new HeroCard()
+            {
+                Title = "Select one of the following games to play (page 3 / 3):",
+                Images = new List<CardImage>()
+                {
+                    new CardImage()
+                    {
+                        Url = "https://vignette2.wikia.nocookie.net/villains/images/8/8b/WOPR.png/revision/latest?cb=20151121234004"
+                    }
+                },
+                Buttons = buttons
+            };
+            replyToConversation.Attachments.Add(card.ToAttachment());
+
             await SendTyping(context, 2000);
             replyToConversation.Text = "Please select a game.";
             replyToConversation.AttachmentLayout = AttachmentLayoutTypes.Carousel;
-            replyToConversation.Attachments.Add(card.ToAttachment());
             await context.PostAsync(replyToConversation);
 
             context.Wait(MessageReceived);
