@@ -1,5 +1,7 @@
 # Recreating Joshua With LUIS
 
+## Updated to v3 of the SDK
+
 This is the code that backs the article at https://blogs.msdn.microsoft.com/drougge/2016/05/31/resurrecting-woprjoshua-using-luis/
 
 - Clone the repo.
